@@ -16,3 +16,12 @@ app.get("/", (req, res) => {
 app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
 );
+
+/* Variáveis dos vinhos
+id
+nome
+cor
+tipo
+barril_tempo
+barril_tipo
+descriçao */
