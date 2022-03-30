@@ -25,3 +25,9 @@ header a {
 header a:hover {
     transform: scale(1.2);
 }
+
+main {
+    padding: 3rem;
+}
+
+
