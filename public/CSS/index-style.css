@@ -5,8 +5,11 @@
     padding: 0;
 }
 
-header {
+body {
     font-family: Charmonman, sans-serif;
+}
+
+header {
     font-size: large;
     padding: 3rem;
     display: flex;
@@ -30,4 +33,32 @@ main {
     padding: 3rem;
 }
 
+main h2 {
+    margin-bottom: 2rem;
+}
 
+main div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links {
+    color: inherit;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1rem;
+    border: solid;
+}
+
+.links div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer {
+    background-color: grey;
+    padding: 3rem;
+    text-align: center;
+}
