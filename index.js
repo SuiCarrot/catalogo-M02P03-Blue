@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000; // Const para armanezar a porta do servid
 
 	try {
 		const result = await database.sync();
-		console.log(result);
+		console.log(result, Catalogo);
 	} catch (err) {
 		console.log(err);
 	}
