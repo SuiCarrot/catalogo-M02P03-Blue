@@ -48,12 +48,3 @@ const Catalogo = database.define(
 );
 
 module.exports = Catalogo;
-
-/* Variáveis dos vinhos
-id
-nome
-cor
-tipo
-barril_tempo
-barril_tipo
-descriçao */

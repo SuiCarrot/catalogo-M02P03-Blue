@@ -38,9 +38,10 @@ app.listen(port, () =>
 /* Variáveis dos vinhos
 id
 nome
-cor
-tipo
-img
-barril_tempo
-barril_tipo
-descriçao */
+pais
+cor (Tipo de Vinho)
+teor (alcoolico)
+classificacao
+harmonizacao 
+descricao
+img */
