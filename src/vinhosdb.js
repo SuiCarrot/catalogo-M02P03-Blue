@@ -14,19 +14,27 @@ const Catalogo = database.define(
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
+		pais: {
+			type: Sequelize.STRING,
+			allowNull: false,
+		},
 		cor: {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		tipo: {
+		uva: {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		barril_tempo: {
+		teor: {
+			type: Sequelize.DECIMAL,
+			allowNull: false,
+		},
+		classificacao: {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		barril_tipo: {
+		harmonizacao: {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
@@ -34,7 +42,7 @@ const Catalogo = database.define(
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		imagem: {
+		img: {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
