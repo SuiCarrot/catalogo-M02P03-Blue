@@ -8,15 +8,38 @@
 </head>
 <body>
     <header>
-        
     </header>
-    
     <main>
+        <section id="cadastro">
+            <h2>Cadastre um novo vinho</h2>
+            <form id="form" action="/create" method="post">
 
+                <label for="nome">Nome do vinho</label>
+                <input id="imp nome" type="text" name="nome" required/>
+
+                <label for="cor">Cor do vinho</label>
+                <input id="imp cor" type="text" name="cor" required/>
+
+                <label for="tipo">Tipo de uva</label>
+                <input id="imp tipo" type="text" name="tipo" required/>
+
+                <label for="barril_tempo">Tempo de fermentação</label>
+                <input id="imp barril_tempo" type="text" name="barril_tempo" required/>
+
+                <label for="barril_tipo">Tipo de barril utilizado</label>
+                <input id="imp barril_tipo" type="text" name="barril_tipo" required/>
+
+                <label for="descricao">Uma breve descrição sobre o vinho</label>
+                <input id="imp descricao" type="text" name="descricao" required/>
+
+                <button id="btnCadastrar" type="submit">
+                    <span>Cadastrar</span>
+                </button>
+            </form>
+        </section>
     </main>
-
     <footer>
-        
     </footer>
 </body>
+<script src="js/script.js"></script>
 </html>

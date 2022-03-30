@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.post("/create", (req,res) => {
+  const vinho = req.body;
+  //inserir aqui codigo para enviar para o banco
+  message = 'O seu vinho foi cadastrado com sucesso';
+  res.redirect("/")
+})
 
 app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
