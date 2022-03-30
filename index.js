@@ -5,18 +5,19 @@ const app = express();
 const port = process.env.PORT || 3000; // Const para armanezar a porta do servidor
 
 //Teste: criar lista de vinhos na memoria para testar no index.ejs
-function Vinho(imagem, nome, pais, cor) {
+function Vinho(imagem, nome, pais, cor, id) {
   this.imagem = imagem;
   this.nome = nome;
   this.pais = pais;
   this.cor = cor;
+  this.id = id;
 }
 const vinhos = [];
 for (let i = 0; i < 10; i++)
-  vinhos.push(new Vinho("Imagem Link", "Nome", "Pais", "Cor"));
+  vinhos.push(new Vinho("Imagem Link", "Nome", "Pais", "Cor",vinhos.length));
 //----------------------------------------------------------------
 
-(async () => {
+/* (async () => {
   const database = require("./src/database");
   const Catalogo = require("./src/vinhosdb");
 
@@ -26,7 +27,7 @@ for (let i = 0; i < 10; i++)
   } catch (err) {
     console.log(err);
   }
-})();
+})(); */
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
@@ -36,15 +37,26 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { vinhos }); //passando a lista vinhos para o index.ejs
 });
 
+app.get("/cadastro", (req, res) => {
+	res.render("cadastro.ejs");
+  });
+
+app.get("/detalhes/:id", (req,res) => {
+	const id = req.params.id;
+	const vinho = vinhos[id];
+	res.render("detalhes", {vinho});
+})
+
 app.post("/create", (req, res) => {
   const vinho = req.body;
-  //inserir aqui codigo para enviar para o banco
+  vinho.id = vinhos.length;
+  vinhos.push(vinho)
   message = "O seu vinho foi cadastrado com sucesso";
   res.redirect("/");
 });
 
 app.listen(port, () =>
-  console.log(`Servidor rodando em http://localhost:${port}`)
+  console.log(`Servidor rodando em http://localhost:${port}`),
 );
 
 /* Variáveis dos vinhos
