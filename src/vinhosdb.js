@@ -47,7 +47,7 @@ const Catalogo = database.define(
 	}
 );
 
-module.exports = Filme;
+module.exports = Catalogo;
 
 /* Variáveis dos vinhos
 id
