@@ -28,6 +28,7 @@ id
 nome
 cor
 tipo
+img
 barril_tempo
 barril_tipo
 descriçao */
