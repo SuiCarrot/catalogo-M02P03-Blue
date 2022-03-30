@@ -5,15 +5,16 @@ const app = express();
 const port = process.env.PORT || 3000; // Const para armanezar a porta do servidor
 
 //Teste: criar lista de vinhos na memoria para testar no index.ejs
-function Vinho(imagem, nome, pais, cor) {
+function Vinho(imagem, nome, pais, cor,id) {
   this.imagem = imagem;
   this.nome = nome;
   this.pais = pais;
   this.cor = cor;
+  this.id = id;
 }
 const vinhos = [];
 for (let i = 0; i < 10; i++)
-  vinhos.push(new Vinho("Imagem Link", "Nome", "Pais", "Cor"));
+  vinhos.push(new Vinho("Imagem Link", "Nome", "Pais", "Cor",vinhos.length));
 //----------------------------------------------------------------
 
 (async () => {
@@ -36,9 +37,20 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { vinhos }); //passando a lista vinhos para o index.ejs
 });
 
-app.post("/create", (req, res) => {
+app.get("/cadastro", (req, res) => {
+	res.render("cadastro.ejs");
+  });
+
+app.get("/detalhes/:id", (req,res) => { //Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
+	const id = req.params.id;
+	const vinho = vinhos[id];
+	res.render("detalhes", {vinho});
+})
+
+app.post("/create", (req, res) => {// Criando um novo item para o catalogo e dando push para o array
   const vinho = req.body;
-  //inserir aqui codigo para enviar para o banco
+  vinho.id = vinhos.length;
+  vinhos.push(vinho)
   message = "O seu vinho foi cadastrado com sucesso";
   res.redirect("/");
 });
