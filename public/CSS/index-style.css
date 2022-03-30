@@ -49,6 +49,7 @@ main div {
     padding: 1rem;
     margin: 1rem;
     border: solid;
+    border-radius: 10%;
 }
 
 .links div {
