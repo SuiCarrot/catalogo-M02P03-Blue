@@ -9,25 +9,27 @@
 </head>
 <body>
     <header>
-       <div>
            <h1>Sejam bem-vindos ao DeVinos!</h1>
-           <nav>
-           <a href="/" target="_self">Home</a>    
-           <a href="/cadastro" target="_self">Cadastro</a>
-           </nav>
-       </div> 
+           <a href="/cadastro" target="_self">Adicionar vinho</a>
     </header>
     
     <main>
+        <h2>Catalogo:</h2>
         <ul>
-            <% %>
-                <li>vinhos aqui</li>
-            <% %>
+            <% vinhos.forEach(item => { %>
+                <li>
+                    <img src="/IMG/image.png" alt="Imagem Nao carregou"/>
+                    <p>Nome: <%= item.nome%></p>
+                    <p>Pais: <%= item.pais%></p>
+                    <p>Cor: <%= item.cor%></p>
+                </li>
+            <% }) %>
         </ul>
     </main>
 
     <footer>
        All rights reserved 
     </footer>
+    <script src="/JS/index.js"></script>
 </body>
 </html>
