@@ -48,7 +48,7 @@ main div {
     text-decoration: none;
     padding: 1rem;
     margin: 1rem;
-    border: solid;
+    border: .1rem solid grey;
     border-radius: 10%;
 }
 
