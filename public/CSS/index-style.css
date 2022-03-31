@@ -15,7 +15,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 header a {
@@ -23,6 +23,9 @@ header a {
     text-decoration: none;
     font-size: larger;
     transition: all 0.5s ease-in-out;
+    padding: .7rem;
+    border: .2rem solid black;
+    border-radius: 5%;
 }
 
 header a:hover {
@@ -44,18 +47,30 @@ main div {
 }
 
 .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: inherit;
     text-decoration: none;
     padding: 1rem;
     margin: 1rem;
     border: .1rem solid grey;
     border-radius: 10%;
+    box-shadow: .3rem .3rem grey;
+    transition: all 0.5s ease-in-out;
+}
+
+.links:hover {
+    transform: scale(1.1);
 }
 
 .links div {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+}
+
+.links img {
+    width: 50%;
 }
 
 footer {
