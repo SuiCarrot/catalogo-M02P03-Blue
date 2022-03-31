@@ -15,18 +15,16 @@
     
     <main>
         <h2>Catalogo:</h2>
-        <div>
+        <section>
             <% vinhos.forEach(item => { %>
             <a class="links" href="/detalhes/<%= item.id %>">
-                    <img src="/IMG/Blanc.png" alt="Imagem Nao carregou"/>
-                    <div>
-                    <p>Nome: <%= item.nome%></p>
-                    <p>Pais: <%= item.pais%></p>
-                    <p>Cor: <%= item.cor%></p>
-                    </div>
+                        <img src="/IMG/Blanc.png" alt="Imagem Nao carregou"/>
+                        <p>Nome: <%= item.nome%></p>
+                        <p>Pais: <%= item.pais%></p>
+                        <p>Cor: <%= item.cor%></p>
                 </a>
             <% }) %>
-        </div>
+        </section>
     </main>
 
     <footer>

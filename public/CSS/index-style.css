@@ -40,13 +40,13 @@ main h2 {
     margin-bottom: 2rem;
 }
 
-main div {
+main section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.links {
+main section a.links {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,16 +60,11 @@ main div {
     transition: all 0.5s ease-in-out;
 }
 
-.links:hover {
+main section a.links:hover {
     transform: scale(1.1);
 }
 
-.links div {
-    display: flex;
-    flex-direction: column;
-}
-
-.links img {
+main section a.links img {
     width: 50%;
 }
 
