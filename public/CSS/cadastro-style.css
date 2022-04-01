@@ -14,13 +14,21 @@ body {
 }
 
 #button {
-    padding: 1rem 3rem;
+    padding: .5rem 2.5rem;
     margin: 3rem;
-    border: .1rem solid white;
-    border-radius: 10%;
+    border: .1rem solid #4F1B46;
+    border-radius: 5%;
     text-decoration: none;
     color: white;
-    background-color: #6B0D47;
+    background-color: #A80359;
+    box-shadow: .5rem .5rem #4F1B46;
+    font-family: Charmonman, serif;
+    font-size: 1.5rem;
+    transition: all 0.5s ease-in-out;
+}
+
+#button:hover {
+    transform: scale(1.1);
 }
 
 #cadastro {
