@@ -11,7 +11,8 @@
     flex-direction: column;
     align-items: center;
     font-family: Charmonman, serif;
-    background-color: #6B0D47;
+    background: rgb(79,27,70);
+    background: linear-gradient(227deg, rgba(79,27,70,1) 0%, rgba(122,11,73,1) 35%, rgba(142,1,74,1) 50%, rgba(116,5,65,1) 64%, rgba(107,13,71,1) 94%);
 }
 
 #cadastro h2 {
@@ -32,6 +33,8 @@
 }
 
 #form label {
+    font-size: 1.5rem;
+    color: white;
     padding: 1rem 0;
 }
 
