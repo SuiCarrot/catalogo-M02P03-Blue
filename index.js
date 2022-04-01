@@ -40,12 +40,79 @@ app.get('/detalhes/:id', async (req, res) => {
 	});
 });
 
-app.post('/create', (req, res) => {
+app.post('/create', async (req, res) => {
 	// Criando um novo item para o catalogo e dando push para o array
-	const {} = req.body;
-	const vinho = req.body;
-	vinho.id = vinhos.length;
-	vinhos.push(vinho);
+	const {
+		nome,
+		pais,
+		cor,
+		uva,
+		teor,
+		classificacao,
+		harmonizacao,
+		descricao,
+		img,
+	} = req.body;
+
+	if (!nome) {
+		res.render('/create', {
+			mensagem: 'Nome é obrigatório',
+		});
+	}
+	if (!pais) {
+		res.render('/create', {
+			mensagem: 'País de origem é obrigatório',
+		});
+	}
+	if (!cor) {
+		res.render('/create', {
+			mensagem: 'Cor do vinho é obrigatória',
+		});
+	}
+	if (!uva) {
+		res.render('/create', {
+			mensagem: 'Tipo de uva é obrigatório',
+		});
+	}
+	if (!teor) {
+		res.render('/create', {
+			mensagem: 'Teor alcoolico é obrigatório',
+		});
+	}
+	if (!classificacao) {
+		res.render('/create', {
+			mensagem: 'Classificação do vinho é obrigatório',
+		});
+	}
+	if (!img) {
+		res.render('/create', {
+			mensagem: 'Imagem é obrigatório',
+		});
+	}
+	try {
+		const vinho = await Catalogo.create({
+			/////verificar nome para utilizar aqui
+			nome,
+			pais,
+			cor,
+			uva,
+			teor,
+			classificacao,
+			harmonizacao,
+			descricao,
+			img,
+		});
+		res.render('/create', {
+			vinho,
+		});
+	} catch (err) {
+		console.log(err);
+
+		res.render('/create', {
+			mensagem: 'Ocorreu um erro ao cadastrar o Filme!',
+		});
+	}
+
 	message = 'O seu vinho foi cadastrado com sucesso';
 	res.redirect('/');
 });
