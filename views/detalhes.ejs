@@ -19,15 +19,15 @@
                   <h2><%= vinho.nome %></h2>
                   <p><%= vinho.pais %></p>
                   <p>Cor: <%= vinho.cor %></p>
-                  <p>Tipo de uva: <%= vinho.uva %></p>
-                  <p>Teor alcoolico: <%= vinho.teor %></p>
+                  <p>Tipo de uva: <%= vinho.uva %> m</p>
+                  <p>Teor alcoolico: <%= vinho.teor %> kg</p>
                   <p>Classificacao: <%= vinho.classificacao %></p>
                   <p>Harmonizaçao: <%= vinho.harmonizacao %></p>
                   <p>Descriçao: <%= vinho.descricao %></p>
               </div>
               <div>
-                  <a href="/editar/:id" method="post">Editar</a>
-                  <a href="/deletar/:id" method="post">Deletar</a>
+                  <a href="<%= vinho.id %>" method="post">Editar</a>
+                  <a href="<%= vinho.id %>" method="post">Deletar</a>
               </div>
           </main>
     </main>    
