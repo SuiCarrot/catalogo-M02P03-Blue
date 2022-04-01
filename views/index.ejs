@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/CSS/index-style.css" type="text/css" media="all">
 </head>
 <body>
+    <% if(message != "") { %>
+        <section class="mensagem">
+          <p><%= message %></p>
+          <span class="close">&times;</span>
+        </section>
+        <% } %>
     <header>
            <h1>Sejam bem-vindos ao DeVinos!</h1>
            <a href="/cadastro" target="_self">Adicionar vinho</a>
