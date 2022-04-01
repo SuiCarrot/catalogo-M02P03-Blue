@@ -18,7 +18,7 @@
         <section>
             <% vinhos.forEach(item => { %>
             <a class="links" href="/detalhes/<%= item.id %>">
-                        <img src="/IMG/Blanc.png" alt="Imagem Nao carregou"/>
+                <img src="<%= item.img %>" alt="Imagem Nao carregou"/>
                         <p>Nome: <%= item.nome%></p>
                         <p>Pais: <%= item.pais%></p>
                         <p>Cor: <%= item.cor%></p>
