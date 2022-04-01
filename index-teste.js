@@ -45,38 +45,38 @@ app.get("/cadastro", (req, res) => {
     const { nome, pais, cor, uva, teor, classificacao, harmonizacao, descricao, img } = req.body;
   
     if (!nome) {
-      res.render("/create", {
+      res.render("create", {
         mensagem: "Nome é obrigatório",
       });
     }
   
     if (!pais) {
-      res.render("/create", {
+      res.render("create", {
         mensagem: "País de origem é obrigatório",
       });
     }
     if (!cor) {
-        res.render("/create", {
+        res.render("create", {
           mensagem: "Cor do vinho é obrigatória",
         });
       }
       if (!uva) {
-        res.render("/create", {
+        res.render("create", {
           mensagem: "Tipo de uva é obrigatório",
         });
       }
       if (!teor) {
-        res.render("/create", {
+        res.render("create", {
           mensagem: "Teor alcoolico é obrigatório",
         });
       }
       if (!classificacao) {
-        res.render("/create", {
+        res.render("create", {
           mensagem: "Classificação do vinho é obrigatório",
         });
       }
       if (!img) {
-        res.render("/create", {
+        res.render("create", {
           mensagem: "Imagem é obrigatório",
         });
       }
@@ -100,10 +100,35 @@ app.get("/cadastro", (req, res) => {
     } catch (err) {
       console.log(err);
   
-      res.render("/create", {
-        mensagem: "Ocorreu um erro ao cadastrar o Filme!",
+      res.render("create", {
+        mensagem: "Ocorreu um erro ao cadastrar o vinho!",
       });
     }
+  });
+
+  app.get("/editar/:id", async (req, res) => {
+    const vinho = await Vinho.findByPk(req.params.id);
+  
+    if (!vinho) {
+      res.render("editar", {
+        mensagem: "Vinho não encontrado!",
+      });
+    }
+  
+    res.render("editar", {vinho});
+  });
+
+
+  app.get("/deletar/:id", async (req, res) => {
+    const vinho = await Vinho.findByPk(req.params.id);
+  
+    if (!vinho) {
+      res.render("deletar", {
+        mensagem: "Vinho não encontrado!",
+      });
+    }
+  
+    res.render("deletar", {vinho});
   });
 
 app.get("/detalhes/:id", (req,res) => { //Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.

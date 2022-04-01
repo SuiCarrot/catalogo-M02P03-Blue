@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITULO AQUI</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="">
+            <form method="POST" action="/deletar/<%= vinho.id %>">
+                <div>
+                    <h2>Deseja realmente deletar o vinho do catálogo?</h2>
+                    <span><%= vinho.nome %></span>
+                </div>
+                <div>
+                    <img src="<%= vinho.nome %>">
+                </div>
+                <div>
+                    <a href="/detalhes/<%= vinho.id %>">Cancelar</a>
+                    <Button type="submit">Confirmar Exclusão</Button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        @ DeVinos. All rights reserved 
+    </footer>
+</body>
+<script src="js/script.js"></script>
+</html>
