@@ -72,8 +72,15 @@ input {
     background-color: #D3B3BC;
 }
 
-
 #cadastro #form {
     display: flex;
     flex-direction: column;
+}
+
+#btnCadastrar {
+    font-family: Charmonman, serif;
+    font-size: larger;
+    color: white;
+    background-color: #4F1B46;
+    border-radius: 3%;
 }
