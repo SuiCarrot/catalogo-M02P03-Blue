@@ -18,6 +18,8 @@ body {
     margin: 3rem;
     border: .1rem solid white;
     border-radius: 10%;
+    text-decoration: none;
+    color: white;
 }
 
 #cadastro {
