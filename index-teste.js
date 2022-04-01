@@ -45,38 +45,38 @@ app.get("/cadastro", (req, res) => {
     const { nome, pais, cor, uva, teor, classificacao, harmonizacao, descricao, img } = req.body;
   
     if (!nome) {
-      res.render("criar", {
+      res.render("/create", {
         mensagem: "Nome é obrigatório",
       });
     }
   
     if (!pais) {
-      res.render("criar", {
+      res.render("/create", {
         mensagem: "País de origem é obrigatório",
       });
     }
     if (!cor) {
-        res.render("criar", {
+        res.render("/create", {
           mensagem: "Cor do vinho é obrigatória",
         });
       }
       if (!uva) {
-        res.render("criar", {
+        res.render("/create", {
           mensagem: "Tipo de uva é obrigatório",
         });
       }
       if (!teor) {
-        res.render("criar", {
+        res.render("/create", {
           mensagem: "Teor alcoolico é obrigatório",
         });
       }
       if (!classificacao) {
-        res.render("criar", {
+        res.render("/create", {
           mensagem: "Classificação do vinho é obrigatório",
         });
       }
       if (!img) {
-        res.render("criar", {
+        res.render("/create", {
           mensagem: "Imagem é obrigatório",
         });
       }
@@ -100,7 +100,7 @@ app.get("/cadastro", (req, res) => {
     } catch (err) {
       console.log(err);
   
-      res.render("criar", {
+      res.render("/create", {
         mensagem: "Ocorreu um erro ao cadastrar o Filme!",
       });
     }
