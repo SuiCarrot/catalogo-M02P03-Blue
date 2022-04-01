@@ -3,14 +3,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const Catalogo = require('./src/vinhosdb');
+const database = require('./src/database');
 const port = process.env.PORT || 3000; // Const para armanezar a porta do servidor
 
-(async () => {
-	const database = require('./src/database');
+let message = '';
 
+(async () => {
 	try {
-		const result = await database.sync();
-		console.log(result);
+		await database.sync();
+		console.log('\nSync database successfully\n');
 	} catch (err) {
 		console.log(err);
 	}
@@ -24,6 +25,7 @@ app.get('/', async (req, res) => {
 	const vinhos = await Catalogo.findAll();
 	res.render('index', {
 		vinhos,
+		message,
 	});
 }); //passando a lista vinhos para o index.
 
@@ -115,6 +117,46 @@ app.post('/create', async (req, res) => {
 		});
 	}
 	res.redirect('/');
+});
+
+app.get('/editar/:id', async (req, res) => {
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	if (!vinho) {
+		res.render('editar', {
+			mensagem: 'Vinho não encontrado!',
+		});
+	}
+
+	res.render('editar', { vinho });
+});
+
+app.get('/deletar/:id', async (req, res) => {
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	if (!vinho) {
+		res.render('deletar', {
+			mensagem: 'Vinho não encontrado!',
+		});
+	}
+
+	res.render('deletar', { vinho });
+});
+
+app.post('/deletar/:id', async (req, res) => {
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	if (!vinho) {
+		res.render('deletar', {
+			mensagem: 'Vinho não encontrado!',
+		});
+	}
+
+	await vinho.destroy();
+
+	res.render('index', {
+		mensagem: `Item ${vinho.nome} deletado com sucesso!`,
+	});
 });
 
 app.listen(port, () =>
