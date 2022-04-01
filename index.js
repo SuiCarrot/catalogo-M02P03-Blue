@@ -58,38 +58,38 @@ app.post('/create', async (req, res) => {
 
 	if (!nome) {
 		res.render('cadastro', {
-			mensagem: 'Nome é obrigatório',
+			message: 'Nome é obrigatório',
 		});
 	}
 
 	if (!pais) {
 		res.render('cadastro', {
-			mensagem: 'País de origem é obrigatório',
+			message: 'País de origem é obrigatório',
 		});
 	}
 	if (!cor) {
 		res.render('cadastro', {
-			mensagem: 'Cor do vinho é obrigatória',
+			message: 'Cor do vinho é obrigatória',
 		});
 	}
 	if (!uva) {
 		res.render('cadastro', {
-			mensagem: 'Tipo de uva é obrigatório',
+			message: 'Tipo de uva é obrigatório',
 		});
 	}
 	if (!teor) {
 		res.render('cadastro', {
-			mensagem: 'Teor alcoolico é obrigatório',
+			message: 'Teor alcoolico é obrigatório',
 		});
 	}
 	if (!classificacao) {
 		res.render('cadastro', {
-			mensagem: 'Classificação do vinho é obrigatório',
+			message: 'Classificação do vinho é obrigatório',
 		});
 	}
 	if (!img) {
 		res.render('cadastro', {
-			mensagem: 'Imagem é obrigatório',
+			message: 'Imagem é obrigatório',
 		});
 	}
 
@@ -113,7 +113,7 @@ app.post('/create', async (req, res) => {
 		console.log(err);
 
 		res.render('/cadastro', {
-			mensagem: 'Ocorreu um erro ao cadastrar o vinho!',
+			message: 'Ocorreu um erro ao cadastrar o vinho!',
 		});
 	}
 	res.redirect('/');
@@ -124,7 +124,7 @@ app.get('/editar/:id', async (req, res) => {
 
 	if (!vinho) {
 		res.render('editar', {
-			mensagem: 'Vinho não encontrado!',
+			message: 'Vinho não encontrado!',
 		});
 	}
 
@@ -136,7 +136,7 @@ app.get('/deletar/:id', async (req, res) => {
 
 	if (!vinho) {
 		res.render('deletar', {
-			mensagem: 'Vinho não encontrado!',
+			message: 'Vinho não encontrado!',
 		});
 	}
 
@@ -148,14 +148,14 @@ app.post('/deletar/:id', async (req, res) => {
 
 	if (!vinho) {
 		res.render('deletar', {
-			mensagem: 'Vinho não encontrado!',
+			message: 'Vinho não encontrado!',
 		});
 	}
 
 	await vinho.destroy();
 
 	res.render('index', {
-		mensagem: `Item ${vinho.nome} deletado com sucesso!`,
+		message: `Item ${vinho.nome} deletado com sucesso!`,
 	});
 });
 
