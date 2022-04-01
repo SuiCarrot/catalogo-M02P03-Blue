@@ -39,7 +39,7 @@ app.get('/detalhes/:id', async (req, res) => {
 });
 
 app.get('/cadastro', (req, res) => {
-	res.render('cadastro');
+	res.render('cadastro', { message });
 });
 
 app.post('/create', async (req, res) => {
