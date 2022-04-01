@@ -84,3 +84,12 @@ input {
     background-color: #4F1B46;
     border-radius: 3%;
 }
+
+footer {
+    background-color: #4F1B46;
+    color: white;
+    font-family: Charmonman, serif;
+    font-size: larger;
+    padding: 3rem;
+    text-align: center;
+}
