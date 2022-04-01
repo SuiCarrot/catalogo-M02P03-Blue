@@ -7,14 +7,17 @@
 }
 
 body {
+    padding-top: 3rem;
     background: rgb(79,27,70);
     background: linear-gradient(227deg, rgba(79,27,70,1) 0%, rgba(122,11,73,1) 35%, rgba(142,1,74,1) 50%, rgba(116,5,65,1) 64%, rgba(107,13,71,1) 94%);
 
 }
 
-a#button {
+#button {
     padding: 1rem 3rem;
     margin: 3rem;
+    border: .1rem solid white;
+    border-radius: 10%;
 }
 
 #cadastro {
