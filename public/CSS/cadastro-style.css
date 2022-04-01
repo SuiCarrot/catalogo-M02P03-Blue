@@ -69,7 +69,9 @@ body {
 input {
     padding: .5rem 0;
     font-size: large;
+    background-color: #D3B3BC;
 }
+
 
 #cadastro #form {
     display: flex;
