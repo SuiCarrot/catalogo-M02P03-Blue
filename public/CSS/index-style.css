@@ -7,15 +7,20 @@
 
 body {
     font-family: Charmonman, sans-serif;
+    color: white;
 }
 
 header {
-    font-size: large;
-    padding: 3rem;
+    padding: 3rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightgrey;
+    background-color: #4F1B46;
+}
+
+header h1 {
+    font-size: xx-large;
+    text-shadow: .2rem .2rem black; 
 }
 
 header a {
@@ -24,8 +29,10 @@ header a {
     font-size: larger;
     transition: all 0.5s ease-in-out;
     padding: .7rem;
-    border: .2rem solid black;
+    border: .1rem solid #40081E;
+    box-shadow: .3rem .3rem #40081E;
     border-radius: 5%;
+    background-color: #A80359;
 }
 
 header a:hover {
@@ -34,11 +41,14 @@ header a:hover {
 
 main {
     padding: 3rem;
+    background: rgb(79,27,70);
+    background: linear-gradient(227deg, rgba(79,27,70,1) 0%, rgba(122,11,73,1) 35%, rgba(142,1,74,1) 50%, rgba(116,5,65,1) 64%, rgba(107,13,71,1) 94%);
 }
 
 main h2 {
     margin-bottom: 2rem;
     font-size: xx-large;
+    text-shadow: .1rem .1rem black;
 }
 
 main section {
@@ -56,10 +66,11 @@ main section a.links {
     text-decoration: none;
     padding: 1rem;
     margin: 1rem;
-    border: .1rem solid grey;
+    border: .1rem solid #4f1b46;
     border-radius: 10%;
-    box-shadow: .3rem .3rem grey;
+    box-shadow: .3rem .3rem #4f1b46;
     transition: all 0.5s ease-in-out;
+    background-color: #A80359;
 }
 
 main section a.links:hover {
@@ -68,12 +79,13 @@ main section a.links:hover {
 
 main section a.links img {
     width: 50%;
+    border: .1rem solid #4F1B46;
+    border-radius: 10%;
 }
 
 footer {
     background-color: #4F1B46;
     color: white;
-    font-family: Charmonman, serif;
     font-size: larger;
     padding: 2rem;
     text-align: center;
