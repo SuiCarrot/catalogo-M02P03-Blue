@@ -15,8 +15,11 @@
 }
 
 #cadastro h2 {
+    color: white;
+    text-shadow: .3rem .3rem black;
     padding: 3rem;
     margin: 2rem 0 0;
+    font-size: 3rem;
 }
 
 #form {
