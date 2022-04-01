@@ -131,6 +131,21 @@ app.get("/cadastro", (req, res) => {
     res.render("deletar", {vinho});
   });
 
+  app.post("/deletar/:id", async (req, res) => {
+  const vinho = await Vinho.findByPk(req.params.id);
+
+  if (!vinho) {
+    res.render("deletar", {
+      mensagem: "Vinho não encontrado!",
+    });
+  }
+
+  await vinho.destroy();
+
+  res.render("index", {
+    mensagem: `Filme ${filme.nome} deletado com sucesso!`,
+  });
+});
 app.get("/detalhes/:id", (req,res) => { //Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
 	const id = req.params.id;
 	const vinho = vinhos[id];
