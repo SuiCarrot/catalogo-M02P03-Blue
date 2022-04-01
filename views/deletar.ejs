@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
+        <h1>Sejam bem-vindos ao DeVinos!</h1>
+        <a href="/cadastro" target="_self">Inicio</a>
     </header>
     <main>
         <div class="">
-            <form method="POST" action="/deletar/<%= vinho.id %>">
+            <form method="POST" action="/deletar/:id">
                 <div>
                     <h2>Deseja realmente deletar o vinho do catálogo?</h2>
                     <span><%= vinho.nome %></span>
