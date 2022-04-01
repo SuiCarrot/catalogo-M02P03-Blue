@@ -108,6 +108,7 @@ app.post('/create', async (req, res) => {
 
 		res.render('/cadastro', {
 			vinho,
+			message,
 		});
 	} catch (err) {
 		console.log(err);
@@ -128,7 +129,7 @@ app.get('/editar/:id', async (req, res) => {
 		});
 	}
 
-	res.render('editar', { vinho });
+	res.render('editar', { vinho, message });
 });
 
 app.get('/deletar/:id', async (req, res) => {
