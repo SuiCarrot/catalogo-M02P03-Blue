@@ -14,10 +14,22 @@ body {
 }
 
 #button {
-    padding: 1rem 3rem;
-    margin: 3rem;
-    border: .1rem solid white;
-    border-radius: 10%;
+    padding: .5rem 2.5rem;
+    margin: 0 3rem;
+    border: .1rem solid #4F1B46;
+    border-radius: 5%;
+    text-decoration: none;
+    color: white;
+    background-color: #A80359;
+    box-shadow: .5rem .5rem #4F1B46;
+    font-family: Charmonman, serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+#button:hover {
+    transform: scale(1.2);
 }
 
 #cadastro {
@@ -29,9 +41,8 @@ body {
 
 #cadastro h2 {
     color: white;
-    text-shadow: .3rem .3rem black;
+    text-shadow: .2rem .2rem black;
     padding: 3rem;
-    margin: 2rem 0 0;
     font-size: 3rem;
 }
 
@@ -58,9 +69,27 @@ body {
 input {
     padding: .5rem 0;
     font-size: large;
+    background-color: #D3B3BC;
 }
 
 #cadastro #form {
     display: flex;
     flex-direction: column;
+}
+
+#btnCadastrar {
+    font-family: Charmonman, serif;
+    font-size: larger;
+    color: white;
+    background-color: #4F1B46;
+    border-radius: 3%;
+}
+
+footer {
+    background-color: #4F1B46;
+    color: white;
+    font-family: Charmonman, serif;
+    font-size: larger;
+    padding: 2rem;
+    text-align: center;
 }

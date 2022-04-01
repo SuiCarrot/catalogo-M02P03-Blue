@@ -37,10 +37,10 @@ app.get('/detalhes/:id', async (req, res) => {
 });
 
 app.get('/cadastro', (req, res) => {
-	res.render('cadastro.ejs');
+	res.render('cadastro');
 });
 
-app.post('/cadastro', async (req, res) => {
+app.post('/create', async (req, res) => {
 	// Criando um novo item para o catalogo e dando push para o array
 	const {
 		nome,
@@ -55,44 +55,44 @@ app.post('/cadastro', async (req, res) => {
 	} = req.body;
 
 	if (!nome) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Nome é obrigatório',
 		});
 	}
+
 	if (!pais) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'País de origem é obrigatório',
 		});
 	}
 	if (!cor) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Cor do vinho é obrigatória',
 		});
 	}
 	if (!uva) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Tipo de uva é obrigatório',
 		});
 	}
 	if (!teor) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Teor alcoolico é obrigatório',
 		});
 	}
 	if (!classificacao) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Classificação do vinho é obrigatório',
 		});
 	}
 	if (!img) {
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			mensagem: 'Imagem é obrigatório',
 		});
 	}
 
 	try {
 		const vinho = await Catalogo.create({
-			/////verificar nome para utilizar aqui
 			nome,
 			pais,
 			cor,
@@ -103,6 +103,7 @@ app.post('/cadastro', async (req, res) => {
 			descricao,
 			img,
 		});
+
 		res.render('/cadastro', {
 			vinho,
 		});
@@ -110,10 +111,9 @@ app.post('/cadastro', async (req, res) => {
 		console.log(err);
 
 		res.render('/cadastro', {
-			mensagem: 'Ocorreu um erro ao cadastrar o Filme!',
+			mensagem: 'Ocorreu um erro ao cadastrar o vinho!',
 		});
 	}
-
 	res.redirect('/');
 });
 
