@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITULO AQUI</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <section id="editar">
+            <h2>Cadastre um novo vinho</h2>
+            <form id="form" action="/editar/<%= vinho.id %>" method="post">
+
+                <label for="nome">Nome do vinho</label>
+                <input id="imp nome" type="text" name="nome" value="<%= vinho.nome %>" required/>
+
+                <label for="pais">País de origem do vinho</label>
+                <input id="imp pais" type="text" name="pais" value="<%= vinho.pais %>" required/>
+
+                <label for="cor">Tipo do vinho</label>
+                <input id="imp cor" type="text" name="cor" value="<%= vinho.cor %>" required/>
+
+                <label for="uva">Tipo de uva</label>
+                <input id="imp uva" type="text" name="uva" value="<%= vinho.uva %>" required/>
+
+                <label for="teor">Teor alcóolico</label>
+                <input id="imp teor" type="text" name="teor"  value="<%= vinho.teor %>"required/>
+
+                <label for="classificacao">Classificação do vinho</label>
+                <input id="imp classificacao" type="text" name="classificacao"  value="<%= vinho.classificacao %>" required/>
+
+                <label for="harmonizacao">Harmonização</label>
+                <input id="imp harmonizacao" type="text" name="harmonizacao"  value="<%= vinho.harmonizacao %>" required/>
+
+                <label for="descricao">Uma breve descrição sobre o vinho</label>
+                <input id="imp descricao" type="text" name="descricao" value="<%= vinho.descricao %>" required/>
+
+                <label for="img">Link para uma imagem do vinho</label>
+                <input id="imp img" type="link" name="img" value="<%= vinho.img %>" required />;
+
+                <a href="/detalhes/<%= vinho.id %>">Cancelar</a>
+                <Button type="submit">Editar e salvar</Button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        @ DeVinos. All rights reserved 
+    </footer>
+</body>
+<script src="js/script.js"></script>
+</html>
