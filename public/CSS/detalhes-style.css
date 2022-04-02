@@ -65,7 +65,7 @@ main div#butoes {
 
 .butoes {
     padding: 1rem;
-    border: .3rem solid #40081E;
+    border: .1rem solid #40081E;
     border-radius: 10%;
     box-shadow: .3rem .3rem #40081E;
     background-color: #A80359;
@@ -78,7 +78,7 @@ main div#butoes {
 
 main img {
     transform: scale(0.8);
-    border: .3rem solid #40081E;
+    border: .1rem solid #40081E;
     border-radius: 10%;
     box-shadow: .3rem .3rem #40081E;
 }
