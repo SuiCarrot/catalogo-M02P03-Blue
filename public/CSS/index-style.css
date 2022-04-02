@@ -67,7 +67,7 @@ main section a.links {
     padding: 1rem;
     margin: 1rem;
     border: .1rem solid #40081E;
-    border-radius: 10%;
+    border-radius: 3%;
     box-shadow: .3rem .3rem #40081E;
     transition: all 0.5s ease-in-out;
     background-color: #A80359;
