@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4F1B46;
+}
+
+header h1 {
+    font-size: xx-large;
+    text-shadow: .2rem .2rem rgb(0, 0, 0); 
+    color: white;
+    font-family: Charmonman, sans-serif;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+    font-size: larger;
+    transition: all 0.5s ease-in-out;
+    padding: .7rem;
+    border: .1rem solid #40081E;
+    box-shadow: .3rem .3rem #40081E;
+    border-radius: 5%;
+    background-color: #A80359;
+}
+
+header a:hover {
+    transform: scale(1.2);
+}
+body {
+    padding-top: 3rem;
+    background: rgb(79,27,70);
+    background: linear-gradient(227deg, rgba(79,27,70,1) 0%, rgba(122,11,73,1) 35%, rgba(142,1,74,1) 50%, rgba(116,5,65,1) 64%, rgba(107,13,71,1) 94%);
+    
+}
+
+#button {
+    padding: .5rem 2.5rem;
+    margin: 0 3rem;
+    border: .1rem solid #4F1B46;
+    border-radius: 5%;
+    text-decoration: none;
+    color: white;
+    background-color: #A80359;
+    box-shadow: .5rem .5rem #4F1B46;
+    font-family: Charmonman, serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+#button:hover {
+    transform: scale(1.2);
+}
+
+#deletar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Charmonman, serif;
+}
+
+#deletar h2 {
+    color: white;
+    text-shadow: .2rem .2rem black;
+    padding: 3rem;
+    font-size: 3rem;
+}
+
+#form {
+    margin-bottom: 5rem;
+    padding: 1rem 3rem;
+    border: .1rem solid #4F1B46;
+    border-radius: 1%;
+    box-shadow: 1rem 1rem #4F1B46;
+    background-color: #A80359;
+}
+
+#form label {
+    font-size: 1.5rem;
+    color: white;
+    padding: 1rem 0;
+}
+
+#form button {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+#deletar #form {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-family: Charmonman, serif;
+    font-size: larger;
+    color: white;
+    background-color: #4F1B46;
+    border-radius: 3%;
+}
+
+footer {
+    background-color: #4F1B46;
+    color: white;
+    font-family: Charmonman, serif;
+    font-size: larger;
+    padding: 2rem;
+    text-align: center;
+}

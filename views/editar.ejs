@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO AQUI</title>
+    <title>Editar</title>
+    <link rel="stylesheet" href="/CSS/editar.css" type="text/css" media="all">
 </head>
 <body>
     <% if(message != "") { %>
@@ -15,7 +16,7 @@
         <% } %>
     <header>
             <h1>Sejam bem-vindos ao DeVinos!</h1>
-            <a href="/cadastro" target="_self">Inicio</a>
+            <a href="/detalhes/<%= vinho.id %>" target="_self">Inicio</a>
      </header>
     <main>
         <section id="editar">
@@ -49,8 +50,8 @@
                 <label for="img">Link para uma imagem do vinho</label>
                 <input id="imp img" type="link" name="img" value="<%= vinho.img %>" required />;
 
-                <a href="/detalhes/<%= vinho.id %>">Cancelar</a>
-                <Button type="submit">Editar e salvar</Button>
+                <a href="/detalhes/<%= vinho.id %>" class="btn">Cancelar</a>
+                <Button type="submit" class="btn">Editar e salvar</Button>
             </form>
         </section>
     </main>

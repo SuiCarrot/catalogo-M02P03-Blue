@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Sejam bem-vindos ao DeVinos!</h1>
-        <a href="/cadastro" target="_self">Inicio</a>
+        <a href="/detalhes" target="_self" id="button">Inicio</a>
     </header>
     <main>
         <div class="">
@@ -22,8 +22,8 @@
                     <img src="<%= vinho.nome %>">
                 </div>
                 <div>
-                    <a href="/detalhes/<%= vinho.id %>">Cancelar</a>
-                    <Button type="submit">Confirmar Exclusão</Button>
+                    <a href="/detalhes/<%= vinho.id %>" class="btn">Cancelar</a>
+                    <Button type="submit" class="btn">Confirmar Exclusão</Button>
                 </div>
             </form>
         </div>
