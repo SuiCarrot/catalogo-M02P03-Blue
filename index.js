@@ -150,6 +150,39 @@ app.get('/editar/:id', async (req, res) => {
 	});
 });
 
+app.post('/editar/:id', async (req, res) => {
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	const {
+		nome,
+		pais,
+		cor,
+		uva,
+		teor,
+		classificacao,
+		harmonizacao,
+		descricao,
+		img,
+	} = req.body;
+
+	vinho.nome = nome;
+	vinho.pais = pais;
+	vinho.cor = cor;
+	vinho.uva = uva;
+	vinho.teor = teor;
+	vinho.classificacao = classificacao;
+	vinho.harmonizacao = harmonizacao;
+	vinho.descricao = descricao;
+	vinho.img = img;
+
+	const ItemEditado = await vinho.save();
+
+	res.render('editar', {
+		vinho: ItemEditado,
+		message: 'Item editado com sucesso!',
+	});
+});
+
 // **************************************
 
 // ************ DELETAR *****************
@@ -167,6 +200,20 @@ app.get('/deletar/:id', async (req, res) => {
 		vinho,
 		message: '',
 	});
+});
+
+app.post('/deletar/:id', async (req, res) => {
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	if (!vinho) {
+		res.render('deletar', {
+			message: 'Vinho não encontrado!',
+		});
+	}
+
+	await vinho.destroy();
+
+	res.redirect('/');
 });
 
 // **************************************
