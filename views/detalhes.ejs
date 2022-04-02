@@ -13,8 +13,8 @@
            <a href="/" >Inicio</a>
     </header>
     <main>
-              <div >
-                <img src="<%= vinho.img %>"/>
+                  <img src="<%= vinho.img %>"/>
+        <div >
                   <h2><%= vinho.nome %></h2>
                   <p><%= vinho.pais %></p>
                   <p>Cor: <%= vinho.cor %></p>
@@ -23,14 +23,12 @@
                   <p>Classificacao: <%= vinho.classificacao %></p>
                   <p>Harmonizaçao: <%= vinho.harmonizacao %></p>
                   <p>Descriçao: <%= vinho.descricao %></p>
-              </div>
-              <div>
-                  <a href="/editar/<%= vinho.id %>" method="post">Editar</a>
-                  <a href="/deletar/<%= vinho.id %>" method="post">Deletar</a>
+         </div>
+              <div id="butoes">
+                  <a class="butoes" href="/editar/<%= vinho.id %>" method="post">Editar</a>
+                  <a class="butoes" href="/deletar/<%= vinho.id %>" method="post">Deletar</a>
               </div>
     </main>    
-
-
 
     <footer>
        @ DeVinos. All rights reserved. 
