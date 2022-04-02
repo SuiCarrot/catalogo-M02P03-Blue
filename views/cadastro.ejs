@@ -33,7 +33,7 @@
                 <input id="imp uva" type="text" name="uva" required/>
 
                 <label for="teor">Teor alcóolico</label>
-                <input id="imp teor" type="text" name="teor" required/>
+                <input id="imp teor" type="number" name="teor" required />
 
                 <label for="classificacao">Classificação do vinho</label>
                 <input id="imp classificacao" type="text" name="classificacao" required/>
@@ -45,7 +45,7 @@
                 <input id="imp descricao" type="text" name="descricao" required/>
 
                 <label for="img">Link para uma imagem do vinho</label>
-                <input id="imp img" type="link" name="img" required/>
+                <input id="imp img" type="link" name="img" required pattern=".*\.(png|jpg|jpeg)" />
 
                 <button id="btnCadastrar" type="submit">
                     <span>Cadastrar</span>
