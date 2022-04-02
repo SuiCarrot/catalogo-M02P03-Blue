@@ -29,20 +29,11 @@ app.get('/', async (req, res) => {
 	});
 }); //passando a lista vinhos para o index.
 
-app.get('/detalhes/:id', async (req, res) => {
-	//Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
-	const vinho = await Catalogo.findByPk(req.params.id);
-
-	res.render('detalhes', {
-		vinho,
-	});
-});
-
 app.get('/cadastro', (req, res) => {
-	res.render('cadastro', { message });
+	res.render('cadastro', { message: '' });
 });
 
-app.post('/create', async (req, res) => {
+app.post('/cadastro', async (req, res) => {
 	// Criando um novo item para o catalogo e dando push para o array
 	const {
 		nome,
@@ -106,18 +97,28 @@ app.post('/create', async (req, res) => {
 			img,
 		});
 
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			vinho,
-			message,
+			message: '',
 		});
 	} catch (err) {
 		console.log(err);
 
-		res.render('/cadastro', {
+		res.render('cadastro', {
 			message: 'Ocorreu um erro ao cadastrar o vinho!',
 		});
 	}
+
 	res.redirect('/');
+});
+
+app.get('/detalhes/:id', async (req, res) => {
+	//Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
+	const vinho = await Catalogo.findByPk(req.params.id);
+
+	res.render('detalhes', {
+		vinho,
+	});
 });
 
 app.get('/editar/:id', async (req, res) => {
