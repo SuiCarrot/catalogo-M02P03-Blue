@@ -29,6 +29,8 @@ app.get('/', async (req, res) => {
 	});
 }); //passando a lista vinhos para o index.
 
+// ************ CADASTRO ****************
+
 app.get('/cadastro', (req, res) => {
 	res.render('cadastro', { message: '' });
 });
@@ -46,6 +48,8 @@ app.post('/cadastro', async (req, res) => {
 		descricao,
 		img,
 	} = req.body;
+
+	console.log(req.body);
 
 	if (!nome) {
 		res.render('cadastro', {
@@ -97,9 +101,11 @@ app.post('/cadastro', async (req, res) => {
 			img,
 		});
 
+		console.log(vinho);
+
 		res.render('cadastro', {
 			vinho,
-			message: '',
+			message: 'Cadastro realizado com sucesso',
 		});
 	} catch (err) {
 		console.log(err);
@@ -109,8 +115,12 @@ app.post('/cadastro', async (req, res) => {
 		});
 	}
 
-	res.redirect('/');
+	/* res.redirect('/'); */
 });
+
+// **************************************
+
+// ************ DETALHES ****************
 
 app.get('/detalhes/:id', async (req, res) => {
 	//Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
@@ -121,6 +131,10 @@ app.get('/detalhes/:id', async (req, res) => {
 	});
 });
 
+// **************************************
+
+// ************ EDITAR ******************
+
 app.get('/editar/:id', async (req, res) => {
 	const vinho = await Catalogo.findByPk(req.params.id);
 
@@ -130,8 +144,15 @@ app.get('/editar/:id', async (req, res) => {
 		});
 	}
 
-	res.render('editar', { vinho, message });
+	res.render('editar', {
+		vinho,
+		message: '',
+	});
 });
+
+// **************************************
+
+// ************ DELETAR *****************
 
 app.get('/deletar/:id', async (req, res) => {
 	const vinho = await Catalogo.findByPk(req.params.id);
@@ -142,24 +163,14 @@ app.get('/deletar/:id', async (req, res) => {
 		});
 	}
 
-	res.render('deletar', { vinho });
-});
-
-app.post('/deletar/:id', async (req, res) => {
-	const vinho = await Catalogo.findByPk(req.params.id);
-
-	if (!vinho) {
-		res.render('deletar', {
-			message: 'Vinho não encontrado!',
-		});
-	}
-
-	await vinho.destroy();
-
-	res.render('index', {
-		message: `Item ${vinho.nome} deletado com sucesso!`,
+	res.render('deletar', {
+		vinho,
+		message: '',
 	});
 });
+
+// **************************************
+
 
 app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
