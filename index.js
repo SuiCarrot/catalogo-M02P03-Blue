@@ -199,7 +199,7 @@ app.get('/deletar/:id', async (req, res) => {
 
 	res.render('deletar', {
 		vinho,
-		message: '',
+		message: 'Vinho deletado com sucesso.',
 	});
 });
 
@@ -211,7 +211,7 @@ app.post('/deletar/:id', async (req, res) => {
 			message: 'Vinho não encontrado!',
 		});
 	}
-
+	
 	await vinho.destroy();
 
 	res.redirect('/');
