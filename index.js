@@ -128,6 +128,7 @@ app.get('/detalhes/:id', async (req, res) => {
 
 	res.render('detalhes', {
 		vinho,
+		message: '',
 	});
 });
 
