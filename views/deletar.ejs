@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/CSS/deletar.css" type="text/css" media="all">
 </head>
 <body>
+    <% if(message != "") { %>
+        <section class="mensagem">
+          <p><%= message %></p>
+          <span class="close">&times;</span>
+        </section>
+        <% } %>
     <header>
         <h1>Seja bem-vindo ao DeVinos!</h1>
         <a href="/detalhes/<%= vinho.id %>" target="_self" id="button">Voltar</a>
@@ -33,5 +39,5 @@
         @ DeVinos. All rights reserved 
     </footer>
 </body>
-<!-- <script src="js/script.js"></script> -->
+<script src="/JS/index.js"></script>
 </html>

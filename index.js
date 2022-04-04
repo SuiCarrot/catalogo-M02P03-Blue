@@ -128,6 +128,7 @@ app.get('/detalhes/:id', async (req, res) => {
 
 	res.render('detalhes', {
 		vinho,
+		message: '',
 	});
 });
 
@@ -210,7 +211,7 @@ app.post('/deletar/:id', async (req, res) => {
 			message: 'Vinho não encontrado!',
 		});
 	}
-
+	message: 'Vinho deletado com sucesso.',
 	await vinho.destroy();
 
 	res.redirect('/');
