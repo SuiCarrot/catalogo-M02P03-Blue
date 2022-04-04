@@ -14,7 +14,7 @@ Funcionalidades:
 
 5 - Deploy no Heroku. Link: https://devvinos.herokuapp.com/
 
-Projeto criado com os alunos Jefferson, Bianda e Daniel Alves. Turma C012 da Blue EdTech
+Projeto criado com os alunos Jefferson, Bianca e Daniel Alves. Turma C012 da Blue EdTech
 
 
 # Instalação:
