@@ -19,20 +19,20 @@
         <a href="/detalhes/<%= vinho.id %>" target="_self" id="button">Voltar</a>
     </header>
     <main>
-        <div class="">
-            <form method="POST" action="/deletar/<%= vinho.id %>">
-                <div>
+        
+            <form id="form" method="POST" action="/deletar/<%= vinho.id %>">
+                
                     <h2>Deseja realmente deletar o vinho do catálogo?</h2>
                     <span><%= vinho.nome %></span>
-                </div>
+                
                 <div>
                     <img src="<%= vinho.img %>">
                 </div>
-                <div>
+                
                     <a href="/detalhes/<%= vinho.id %>" class="btn">Cancelar</a>
                     <Button type="submit" class="btn">Confirmar Exclusão</Button>
-                </div>
-            </form>
+                
+            
         </div>
     </main>
     <footer>
