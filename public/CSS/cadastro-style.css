@@ -6,6 +6,30 @@
     padding: 0;
 }
 
+section.mensagem {
+    margin: 0px;
+    background-color: rgba(204, 204, 204, 0.636);
+    color: black;
+    z-index: 100;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  span.close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  span.close:hover {
+    color: rgb(6, 6, 6);
+    transform: scale(1.5);
+  }
+
 body {
     padding-top: 3rem;
     background: rgb(79,27,70);
@@ -94,29 +118,3 @@ footer {
     text-align: center;
 }
 
-section.mensagem {
-    padding: 0.5rem;
-    background-color: rgba(170, 3, 3, 0.644);
-    color: black;
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  span.close {
-    font-size: 2rem;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  span.close:hover {
-    color: rgb(255, 0, 0);
-    transform: scale(1.5);
-  }
