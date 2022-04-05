@@ -49,8 +49,6 @@ app.post('/cadastro', async (req, res) => {
 		img,
 	} = req.body;
 
-	console.log(req.body);
-
 	if (!nome) {
 		res.render('cadastro', {
 			message: 'Nome é obrigatório',
@@ -101,8 +99,6 @@ app.post('/cadastro', async (req, res) => {
 			img,
 		});
 
-		console.log(vinho);
-
 		res.render('cadastro', {
 			vinho,
 			message: 'Cadastro realizado com sucesso',
@@ -124,7 +120,10 @@ app.post('/cadastro', async (req, res) => {
 
 app.get('/detalhes/:id', async (req, res) => {
 	//Selecionando qual dos itens do array ele vai utilizar para renderizar a pagina de detalhes.
-	const vinho = await Catalogo.findByPk(req.params.id);
+
+	const vinho = await Catalogo.findByPk(req.params.id).catch((err) => {
+		new Error(err);
+	});
 
 	res.render('detalhes', {
 		vinho,
