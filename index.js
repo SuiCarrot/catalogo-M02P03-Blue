@@ -80,11 +80,11 @@ app.post('/cadastro', async (req, res) => {
 			message: 'Classificação do vinho é obrigatório',
 		});
 	}
-	if (!img) {
+	/* if (!img) {
 		res.render('cadastro', {
 			message: 'Imagem é obrigatório',
 		});
-	}
+	} */
 
 	try {
 		const vinho = await Catalogo.create({
