@@ -123,12 +123,9 @@ header a:hover {
     transform: scale(1.2);
 }
 section.mensagem {
-    padding: 0.5rem;
-    background-color: rgba(170, 3, 3, 0.644);
+    margin: 0px;
+    background-color: rgba(204, 204, 204, 0.636);
     color: black;
-    position: fixed;
-    left: 0;
-    right: 0;
     z-index: 100;
     text-align: center;
     font-size: 1rem;
@@ -145,6 +142,6 @@ section.mensagem {
   }
   
   span.close:hover {
-    color: rgb(255, 0, 0);
+    color: rgb(6, 6, 6);
     transform: scale(1.5);
   }
