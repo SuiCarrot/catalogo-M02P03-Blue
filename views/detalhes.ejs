@@ -19,7 +19,7 @@
            <a href="/" >Inicio</a>
     </header>
     <main>
-                <img src="<%= vinho.img %>" alt="imagem" />
+                <img src="<%= vinho.img %>" alt="imagem" onError="this.onerror=null;this.src='/IMG/Sem-rotulo.png';" />
         <div >
                   <h2><%= vinho.nome %></h2>
                   <p><%= vinho.pais %></p>
